@@ -12,11 +12,15 @@ function App() {
         setTitle(event.target.value);
     }
 
+    function handleClick() {
+      alert(title);
+    }
+
     let message ='';
     
     if (title.length === 0) {
       message = "Wpisz coś...";
-    } else if (title.length < 3) {
+    } else if (title.length < 10) {
       message = "Krótki tytuł";
     } else if (title.length < 20) {
       message = "Dobry tytuł";
@@ -34,6 +38,7 @@ function App() {
             <input type="text" value={title} onChange={handleChange}/>
 
             <div>{message}</div>
+            <button type="button" onClick={()=> alert(title)}>Pokaż tytuł</button>
         </div>
 
     );
