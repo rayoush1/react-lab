@@ -18,6 +18,18 @@ function App() {
 
     let message ='';
     
+    const movies = [
+
+    {title: "Wall-E"},
+
+    {title: "Pulp Fiction"},
+
+    {title: "Matrix"},
+
+    {title: "1670"},
+
+];
+    
     if (title.length === 0) {
       message = "Wpisz coś...";
     } else if (title.length < 10) {
@@ -39,6 +51,10 @@ function App() {
 
             <div>{message}</div>
             <button type="button" onClick={()=> alert(title)}>Pokaż tytuł</button>
+       
+          <ul>
+            {movies.map((movie) => <li key={movie.title}>{movie.title}</li>)}
+          </ul>
         </div>
 
     );
